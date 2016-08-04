@@ -1,0 +1,32 @@
+{
+  "name": "github-battle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "webpack-dev-server",
+    "production": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srinidhisrinivasaraghavan/ReactJs.git"
+  },
+  "author": "Srinidhi S",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srinidhisrinivasaraghavan/ReactJs/issues"
+  },
+  "homepage": "https://github.com/srinidhisrinivasaraghavan/ReactJs#readme",
+  "dependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.11.1",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
