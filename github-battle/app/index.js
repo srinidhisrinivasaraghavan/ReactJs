@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var routes = require('./config/routes');
 
 var USER_DATA = {
   name: 'Srinidhi Srinivasa Raghavan',
@@ -55,4 +56,6 @@ var UserProfile = React.createClass({
 	}
 });
 
-ReactDOM.render(<UserProfile user={USER_DATA}/>, document.getElementById('app'));
+//ReactDOM.render(<UserProfile user={USER_DATA}/>, document.getElementById('app'));
+
+ReactDOM.render(routes, document.getElementById('app'));
