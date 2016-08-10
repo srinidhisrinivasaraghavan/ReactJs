@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import {bindActionCreators} from 'redux'; 
 import {fetchWeather} from '../actions/index';
 
 class SearchBar extends Component{
@@ -32,6 +32,7 @@ class SearchBar extends Component{
 	}
 }
 
+//to link between the container and action
 function mapDispatchToProps(dispatch){
 	return bindActionCreators({fetchWeather:fetchWeather},dispatch);
 }
