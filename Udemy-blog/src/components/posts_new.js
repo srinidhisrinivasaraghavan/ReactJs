@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {reduxForm} from 'redux-form';
 import {Link} from 'react-router';
-import createPost from '../actions/index';
+import {createPost} from '../actions/index';
 
 class PostsNew extends Component{
 	static contextTypes ={

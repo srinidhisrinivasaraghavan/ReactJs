@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import  actionMethods from '../actions/index';
+import {fetchPosts} from '../actions/index';
 import { Link } from 'react-router';
 
 class PostsIndex extends Component{
 	componentWillMount(){
-		console.log('componentWillMount', this.props.fetchPosts);
+		//console.log('componentWillMount', this.props.fetchPosts);
 		this.props.fetchPosts();
 	}
 	renderPosts(){
@@ -14,9 +14,11 @@ class PostsIndex extends Component{
 			this.props.posts.map ((post)=>{
 				return(
 					<li className="list-group-item" key={post.id}>
-						<span className='pull-xs-right'>
-							{post.categories}
-						</span>
+						<Link to={'posts/' +post.id} >
+							<span className='pull-xs-right'>
+								{post.categories}
+							</span>
+						</Link>
 						<strong>
 							{post.title}
 						</strong>
@@ -46,17 +48,16 @@ class PostsIndex extends Component{
 
 //state from reducer
 function mapStateToProps(state){
-	console.log('result post',state.posts);
 	return {posts :state.posts.all};
 }
 
 //dispatch from action creater
 function mapDispatchToProps(dispatch){
-	console.log('fetchPost',actionMethods.fetchPosts);
-	return bindActionCreators({fetchPosts:actionMethods.fetchPosts},dispatch);
+	//console.log('fetchPost',fetchPosts);
+	return bindActionCreators({fetchPosts:fetchPosts},dispatch);
 }
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(PostsIndex);
 
-//export default connect(null,{fetchPosts})(PostsIndex); //ES6
+//export default connect(mapStateToProps,{fetchPosts})(PostsIndex); //ES6
