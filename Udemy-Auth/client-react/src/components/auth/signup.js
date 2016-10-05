@@ -40,6 +40,15 @@ class Signup extends Component{
 	}
 }
 
+function validate(props){
+	const errors={};
+	if(props.password!=props.confirmPassword){
+		errors.password='password dont match'
+	}
+
+	return errors;
+}
+
 function mapStateToProps(state){
 	return {errorMessage: state.auth.error}
 }
@@ -49,5 +58,6 @@ function mapStateToProps(state){
 //reduxform injects these config on props
 export default reduxForm({
 	form :'SignUpForm',
-	fields :['email', 'password']
+	fields :['email', 'password','confirmPassword'],
+	validate:validate
 },mapStateToProps,actions)(Signup);
